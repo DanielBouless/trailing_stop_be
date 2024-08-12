@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const Authentication  = require('./middleware/Authentication.js')
+// const Authentication  = require('./middleware/Authentication.js')
 
 
 app.use(express.static('public'))
@@ -14,9 +14,9 @@ app.use(cors({ origin: "http://localhost:3000", credentials:true}))
 // app.use(Authentication)
 
 
-app.use('/users', require('./controllers/users.js'))
-app.use('/assetInfo', require('./controllers/assetInfo.js'))
-
+// app.use('/users', require('./controllers/users.js'))
+// app.use('/assetInfo', require('./controllers/assetInfo.js'))
+app.use('/cat', require('./controllers/coinbaseAdvacedTrades'))
 
 app.get('/', (req, res)=>{
     res.send('Time to make monies 2024')
